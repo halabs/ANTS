@@ -9,8 +9,8 @@ class Welcome extends CI_Controller {
 		$config['max_size']	= '2048';
 		$config['max_width']  = '1024'; 
 		$config['max_height']  = '768';
-		$this->load->helper('fileUpload_helper');
-		$this->load->library('upload', $config);
+		//$this->load->helper('fileUpload');
+		//$this->load->library('upload', $config);
         //$this->load->model('welcomeModel');
     }
 
@@ -25,9 +25,9 @@ class Welcome extends CI_Controller {
             if(isset($_POST['MasterUser'])){
                // $result = $this->welcomeModel->doRegistration($_POST);
             }
-            //if(!empty($result)){
-                $this->upload->data();
-                phpinfo();
+            if(!empty($result)){
+                //$this->upload->data();
+               // phpinfo();
                 if (isset($_FILES["Logo"]['temp_name'])){
                     echo $_FILES["Logo"]["name"]."<br>";
                     echo $_FILES['Logo']['size']."<br>";
@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
                 }
                 getimagesize($_FILES["Logo"]["tmp_name"]);
                 //echo doUpload();
-            //}
+            }
             $this->load->view('registration');
         }
         

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('Error: Authentication denied...');
  
-class WelcomeModel extends CI_Model {
+class Welcome_model extends CI_Model {
     
     function __construct()
     {
